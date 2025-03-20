@@ -1,0 +1,11 @@
+# Marcar search/index.json como gerado
+search/index.json linguist-generated=true
+
+# Marcar todos os arquivos na pasta search como gerados
+search/* linguist-generated=true
+
+# Marcar todos os arquivos .min.js como gerados
+*.min.js linguist-generated=true
+
+# Marcar todos os arquivos na pasta dist como gerados
+dist/* linguist-generated=true
