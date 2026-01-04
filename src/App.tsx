@@ -1,7 +1,9 @@
-import React from 'react'
+
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import GalleryPage from './pages/GalleryPage'
+
+import FloatingWhatsApp from './components/FloatingWhatsApp'
 
 function App() {
   return (
@@ -10,6 +12,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/galeria" element={<GalleryPage />} />
       </Routes>
+      <FloatingWhatsApp />
     </div>
   )
 }

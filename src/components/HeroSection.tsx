@@ -10,45 +10,67 @@ const HeroSection: React.FC = () => {
   }
 
   return (
-    <section id="home" className="flex-1 flex items-center justify-center relative z-10">
-      <div className="container-custom">
+    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed"></div>
+        <div className="absolute inset-0 bg-black/40"></div> {/* Extra darkening layer */}
+      </div>
+
+      <div className="container-custom relative z-10 pt-20">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-center"
+          className="text-center max-w-5xl mx-auto"
         >
-          <div className="bg-black bg-opacity-75 p-8 md:p-12 border-4 border-primary-500 rounded-lg max-w-4xl mx-auto">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 uppercase text-shadow"
-            >
-              Bem-vindo à N&M Barbearia
-            </motion.h1>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto"
-            >
-              Desde 2017, a N&M Barbearia oferece serviços de barbearia de alta qualidade para homens e meninos. 
-              Nossos barbeiros são especialistas em cortes de cabelo, barbas e bigodes. 
-              Nós nos esforçamos para fornecer um serviço excepcional a todos os nossos clientes.
-            </motion.p>
-            
+          {/* Subheading / Tagline */}
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="block text-primary-400 font-bold tracking-[0.2em] mb-4 uppercase text-sm md:text-base"
+          >
+            Estilo • Tradição • Excelência
+          </motion.span>
+
+          <h1 className="heading-primary text-shadow-lg mb-8">
+            Bem-vindo à <span className="text-primary-400">N&M</span> Barbearia
+          </h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto font-light"
+          >
+            Desde 2017, definindo o padrão de elegância masculina.
+            Especialistas em cortes clássicos e modernos para o homem contemporâneo.
+          </motion.p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <motion.button
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              onClick={() => scrollToSection('about')}
-              className="btn-primary text-lg font-semibold"
+              onClick={() => scrollToSection('contact')}
+              className="btn-primary"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Conheça Nossa História
+              Falar conosco
+            </motion.button>
+
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+              onClick={() => scrollToSection('about')}
+              className="btn-secondary"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Nossa História
             </motion.button>
           </div>
         </motion.div>

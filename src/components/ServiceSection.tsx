@@ -42,14 +42,14 @@ const ServiceSection: React.FC = () => {
     },
     {
       id: 5,
-      title: 'Sombracelhas',
+      title: 'Sobrancelhas',
       description: 'Na N&M Barbearia, cuidamos de cada detalhe do seu visual, incluindo suas sobrancelhas. Nossos profissionais experientes utilizam técnicas precisas para modelar e definir suas sobrancelhas, realçando o seu olhar e harmonizando o seu rosto. Do design clássico ao moderno, garantimos um resultado natural e impecável.',
       image: '/images/sombracelha.png'
     }
   ]
 
   return (
-    <section id="service" className="section-padding bg-gray-50">
+    <section id="service" className="section-padding bg-dark-900 relative">
       <div className="container-custom">
         <motion.div
           ref={ref}
@@ -58,9 +58,9 @@ const ServiceSection: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="heading-primary">Serviços</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mt-4">
-            Oferecemos uma ampla gama de serviços para cuidar do seu visual com excelência
+          <h2 className="heading-primary">Nossos <span className="text-primary-400">Serviços</span></h2>
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto mt-4 font-light">
+            Experiência completa de barbearia com profissionais de elite
           </p>
         </motion.div>
 
@@ -71,31 +71,27 @@ const ServiceSection: React.FC = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group"
+              className="bg-dark-800 rounded-sm overflow-hidden hover:shadow-2xl hover:shadow-primary-900/20 transition-all duration-500 group border border-white/5 hover:border-primary-500/30"
             >
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden h-64">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter brightness-75 group-hover:brightness-100"
                 />
-                <div className="absolute inset-0 bg-primary-500 bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-900 to-transparent opacity-80"></div>
+                <div className="absolute bottom-4 left-4">
+                  <h3 className="text-2xl font-oswald font-bold text-white group-hover:text-primary-400 transition-colors duration-300 uppercase tracking-wider">
+                    {service.title}
+                  </h3>
+                </div>
               </div>
-              
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-3 group-hover:text-primary-600 transition-colors duration-300">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+
+              <div className="p-8">
+                <p className="text-gray-400 text-sm leading-relaxed mb-6 font-light">
                   {service.description}
                 </p>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="btn-secondary text-sm"
-                >
-                  Saiba Mais
-                </motion.button>
+                {/* Button removed as per user request */}
               </div>
             </motion.div>
           ))}

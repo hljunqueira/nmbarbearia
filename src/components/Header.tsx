@@ -27,9 +27,8 @@ const Header: React.FC = () => {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-black bg-opacity-90 backdrop-blur-sm' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-dark-900/95 backdrop-blur-md shadow-lg border-b border-white/5' : 'bg-transparent py-4'
+        }`}
     >
       <div className="container-custom">
         <nav className="flex items-center justify-between py-4">
@@ -75,19 +74,16 @@ const Header: React.FC = () => {
           >
             <div className="w-6 h-6 flex flex-col justify-center items-center">
               <span
-                className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-                  isMenuOpen ? 'rotate-45 translate-y-1.5' : ''
-                }`}
+                className={`block w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''
+                  }`}
               />
               <span
-                className={`block w-6 h-0.5 bg-white mt-1 transition-all duration-300 ${
-                  isMenuOpen ? 'opacity-0' : ''
-                }`}
+                className={`block w-6 h-0.5 bg-white mt-1 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''
+                  }`}
               />
               <span
-                className={`block w-6 h-0.5 bg-white mt-1 transition-all duration-300 ${
-                  isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
-                }`}
+                className={`block w-6 h-0.5 bg-white mt-1 transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
+                  }`}
               />
             </div>
           </button>
@@ -97,7 +93,7 @@ const Header: React.FC = () => {
         <motion.div
           initial={false}
           animate={{ height: isMenuOpen ? 'auto' : 0 }}
-          className="lg:hidden overflow-hidden bg-black bg-opacity-95"
+          className="lg:hidden overflow-hidden bg-dark-900 border-t border-white/10"
         >
           <div className="py-4 space-y-4">
             {[

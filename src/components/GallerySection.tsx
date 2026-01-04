@@ -20,7 +20,7 @@ const GallerySection: React.FC = () => {
   ]
 
   return (
-    <section id="gallery" className="section-padding bg-white">
+    <section id="gallery" className="section-padding bg-dark-800">
       <div className="container-custom">
         <motion.div
           ref={ref}
@@ -29,9 +29,9 @@ const GallerySection: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="heading-primary">Nossa Galeria</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mt-4">
-            Veja nossos trabalhos realizados!
+          <h2 className="heading-primary">Nossa <span className="text-primary-400">Galeria</span></h2>
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto mt-4 font-light">
+            Confira o padrão de qualidade dos nossos cortes
           </p>
         </motion.div>
 
@@ -42,18 +42,18 @@ const GallerySection: React.FC = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              className="group relative overflow-hidden rounded-sm shadow-lg border border-white/5"
             >
               <img
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-primary-500 bg-opacity-0 group-hover:bg-opacity-80 transition-all duration-300 flex items-center justify-center">
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center border-2 border-primary-400/50 m-2">
                 <Lightbox
                   src={image.src}
                   alt={image.alt}
-                  className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0"
                 />
               </div>
             </motion.div>
@@ -68,9 +68,9 @@ const GallerySection: React.FC = () => {
         >
           <Link
             to="/galeria"
-            className="btn-primary text-lg font-semibold"
+            className="btn-secondary"
           >
-            Veja Mais!
+            Ver Galeria Completa
           </Link>
         </motion.div>
       </div>
